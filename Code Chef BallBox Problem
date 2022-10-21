@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    for (int i = 0; i < t; i++)
+    {
+        int n,z,sum=0;
+        cin>>n>>z;
+        for (int j = 1; j <= z; j++)
+        {
+            sum=sum+j;
+        }
+        if (n>=sum)
+        {
+            cout<<"YES"<<endl;
+        }
+        else
+        cout<<"NO"<<endl;
+        
+    }
+    return 0;
+}
