@@ -1,0 +1,58 @@
+//Insertion Sort
+#include<iostream>
+using namespace std;
+void
+iSort (int a[], int n)
+{
+  for (int k = 1; k < n; k++)
+    {
+      int temp = a[k];
+      int m = k - 1;
+      while (m >= 0 && a[m] > temp)
+	{
+	  a[m + 1] = a[m];
+	  --m;
+	}
+      a[m + 1] = temp;
+    }
+  cout << "Sorted Array:";
+  for (int j = 0; j < n; j++)
+    {
+      cout << " " << a[j];
+    }
+}
+
+int
+main ()
+{
+  int i, n, M, d, sum1 = 0, sum2 = 0, dif;
+  cout << "Enter the size of array: ";
+  cin >> n;
+  cout << "\nEnter a value:";
+  cin >> M;
+  int a[n];
+  cout << "Enter the values in array:" << endl;
+  for (i = 0; i < n; i++)
+    {
+      cout << "a[" << i << "] = ";
+      cin >> a[i];
+    }
+  iSort (a, n);
+  cout << endl;
+  d = n - M;
+//   cout << d;
+  for (int b = n - 1; b >= d; b--)
+    {
+      sum1 = sum1 + a[b];
+    }
+  for (int c = 0; c < d; c++)
+    {
+      sum2 = sum2 + a[c];
+    }
+    
+    cout << sum1 <<sum2;
+  dif = (sum1 - sum2);
+  cout << "\nDifference = " << dif;
+
+  return 0;
+}
