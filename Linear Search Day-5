@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+int i,n,a[100],key,flag = 0,count = 0;
+cout<<"Enter the size of array: ";
+cin>>n;
+cout<<"Enter the values in array:"<<endl;
+    for ( i = 0; i < n; i++)
+     {
+      cin>>a[i];
+     }
+cout<<"Entered values by user:"<<endl;
+    for ( i = 0; i < n; i++)
+     {
+      cout<<a[i]<<endl;
+     }
+cout<<"Enter the value you want to search: ";
+cin>>key;
+   for ( i = 0; i < n; i++)
+    {
+     if(key == a[i])
+     {
+       flag = 1;
+       cout<<"Value founded at position: "<<i+1<<endl;
+       count++;
+     }
+    }
+if (flag == 0)
+   {
+    cout<<"Value Not Found";
+   }
+else
+ cout<<"Value "<<key<< " founded "<<count<<" times";
+
+return 0;
+}
