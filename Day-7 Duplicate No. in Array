@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool twice(int arr[], int n, int k)
+{
+    unordered_set<int> myset;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (myset.find(arr[i]) != myset.end())
+            return true;
+
+                myset.insert(arr[i]);
+
+                if (i >= k)
+            myset.erase(arr[i-k]);
+    }
+    return false;
+}
+int main ()
+{
+    int arr[] = {1,2,1,4,6,5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    if (twice(arr, n, 3))
+        cout << "Yes";
+    else
+        cout << "No";
+}
